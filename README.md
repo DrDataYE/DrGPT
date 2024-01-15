@@ -22,17 +22,17 @@ After installation, `drgpt` can be used from the command line as follows:
 
 - **Generate and Execute Shell Commands**:
   ```bash
-  drgpt --shell
+  drgpt --shell "update me system"
   ```
 
 - **Describe Shell Commands**:
   ```bash
-  drgpt --describe-shell
+  drgpt --describe-shell "ls -hl |grep drgpt"
   ```
 
 - **Generate Code Only**:
   ```bash
-  drgpt --code
+  drgpt --code "give me example to use flask in python"
   ```
 
 - **Open Text Editor for Prompt Input**:
@@ -66,7 +66,7 @@ Here are some examples of how to use DrGPT:
    ![Shell Command Generation](images/shell_command_example.png)
 
    ```bash
-   drgpt --shell
+   drgpt --shell "install metasploit framework in me system"
    ```
 
 2. **Code Generation**:
@@ -74,7 +74,7 @@ Here are some examples of how to use DrGPT:
    ![Code Generation](images/code_generation_example.png)
 
    ```bash
-   drgpt --code
+   drgpt --code "give me code python to reverse shell"
    ```
 
 3. **Conversation Follow-up**:

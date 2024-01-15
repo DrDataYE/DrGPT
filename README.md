@@ -82,7 +82,7 @@ Here are some examples of how to use DrGPT:
    ![Conversation Follow-up](images/conversation_followup.png)
 
    ```bash
-   drgpt --chat "How's the weather today?"
+   drgpt "How's the weather today?"
    ```
 
 ## :memo: Notes

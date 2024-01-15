@@ -82,7 +82,7 @@ Here are some examples of how to use DrGPT:
    ![Conversation Follow-up](3.jpg)
 
    ```bash
-   drgpt "Explain to me the Python programming language."
+   drgpt "how i use me sysem in command-line?"
    ```
 
 ## :memo: Notes

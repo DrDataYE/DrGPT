@@ -1,3 +1,4 @@
+
 # DrGPT :zap:
 
 DrGPT is an interactive **Command-Line Interface (CLI) tool** that leverages the GPT model for various tasks such as answering questions, executing shell commands, and more.
@@ -22,17 +23,17 @@ After installation, `drgpt` can be used from the command line as follows:
 
 - **Generate and Execute Shell Commands**:
   ```bash
-  drgpt --shell "update me system"
+  drgpt --shell "update my system"
   ```
 
 - **Describe Shell Commands**:
   ```bash
-  drgpt --describe-shell "ls -hl |grep drgpt"
+  drgpt --describe-shell "ls -hl | grep drgpt"
   ```
 
 - **Generate Code Only**:
   ```bash
-  drgpt --code "give me example to use flask in python"
+  drgpt --code "give me an example of using flask in python"
   ```
 
 - **Open Text Editor for Prompt Input**:
@@ -66,7 +67,7 @@ Here are some examples of how to use DrGPT:
    ![Shell Command Generation](1.jpg)
 
    ```bash
-   drgpt --shell "install metasploit framework in me system"
+   drgpt --shell "install the metasploit framework on my system"
    ```
 
 2. **Code Generation**:
@@ -74,7 +75,7 @@ Here are some examples of how to use DrGPT:
    ![Code Generation](2.jpg)
 
    ```bash
-   drgpt --code "give me code python to reverse shell"
+   drgpt --code "give me python code for a reverse shell"
    ```
 
 3. **Conversation Follow-up**:
@@ -82,7 +83,7 @@ Here are some examples of how to use DrGPT:
    ![Conversation Follow-up](3.jpg)
 
    ```bash
-   drgpt "how i use me sysem in command-line?"
+   drgpt "how do I use my system in the command line?"
    ```
 
 ## :memo: Notes

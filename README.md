@@ -63,7 +63,7 @@ Here are some examples of how to use DrGPT:
 
 1. **Shell Command Generation**:
 
-   ![Shell Command Generation](images/shell_command_example.png)
+   ![Shell Command Generation](1.jpg)
 
    ```bash
    drgpt --shell "install metasploit framework in me system"
@@ -71,7 +71,7 @@ Here are some examples of how to use DrGPT:
 
 2. **Code Generation**:
 
-   ![Code Generation](images/code_generation_example.png)
+   ![Code Generation](2.jpg)
 
    ```bash
    drgpt --code "give me code python to reverse shell"
@@ -79,7 +79,7 @@ Here are some examples of how to use DrGPT:
 
 3. **Conversation Follow-up**:
 
-   ![Conversation Follow-up](images/conversation_followup.png)
+   ![Conversation Follow-up](3.jpg)
 
    ```bash
    drgpt "Explain to me the Python programming language."

@@ -90,6 +90,11 @@ Here are some examples of how to use DrGPT:
 - Ensure Python 3 and other necessary dependencies are installed on your system.
 - You may need root permissions to install the package.
 
+## :scroll: License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
 ---
 
 *Enjoy using DrGPT!* :rocket:

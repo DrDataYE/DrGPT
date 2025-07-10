@@ -2,52 +2,32 @@
 
 This directory contains the complete Sphinx documentation for DrGPT.
 
-## Building the Documentation
+## Quick Links
 
-### Prerequisites
+- **[Installation & Quick Start](../README.md#quick-start)** - Get started in 5 minutes
+- **[Online Documentation](https://drgpt.readthedocs.io)** - Full documentation
+- **[GitHub Repository](https://github.com/DrDataYE/drgpt)** - Source code
 
-Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Build HTML Documentation
+## Building Locally
 
 ```bash
-# Build the documentation
-sphinx-build -b html source build
+# Install dependencies
+pip install -e ".[docs]"
 
-# Or use make (if available)
+# Build documentation
 make html
+
+# View documentation
+open _build/html/index.html
 ```
 
-### Build with Auto-reload
+## Structure
 
-For development, you can use sphinx-autobuild to automatically rebuild when files change:
+- `source/` - Sphinx source files
+- `examples/` - Usage examples
+- `requirements.txt` - Build dependencies
 
-```bash
-sphinx-autobuild source build
-```
-
-This will start a local server at http://localhost:8000 that automatically refreshes when you make changes.
-
-### Viewing the Documentation
-
-After building, open `build/index.html` in your web browser to view the documentation.
-
-## Documentation Structure
-
-- **source/**: Source files for the documentation
-  - **modes/**: Documentation for DrGPT's four modes (standard, code, shell, interface)
-  - **features/**: Advanced features (providers, models, vi editor integration)
-  - **api/**: CLI reference and API documentation
-  - **examples/**: Real-world use cases and workflow examples
-  - **_static/**: Static files (CSS, images, etc.)
-- **build/**: Generated HTML documentation (created after building)
-- **requirements.txt**: Python dependencies for building documentation
-
-## Contributing to Documentation
+For complete information, see the main [README](../README.md).
 
 1. Edit the `.rst` files in the `source/` directory
 2. Build the documentation to test your changes

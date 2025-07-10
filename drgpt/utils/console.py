@@ -28,7 +28,7 @@ def print_error(message: str) -> None:
     Args:
         message: Error message to print
     """
-    console.print(f"[bold red]Error:[/bold red] {message}")
+    console.print(f"[[bold red]-[/bold red]] Error: {message}")
 
 
 def print_warning(message: str) -> None:
@@ -37,7 +37,7 @@ def print_warning(message: str) -> None:
     Args:
         message: Warning message to print
     """
-    console.print(f"[yellow]Warning:[/yellow] {message}")
+    console.print(f"[[yellow]-[/yellow]] Warning: {message}")
 
 
 def print_success(message: str) -> None:
@@ -46,4 +46,4 @@ def print_success(message: str) -> None:
     Args:
         message: Success message to print
     """
-    console.print(f"[green]{message}[/green]")
+    console.print(f"[[green]+[/green]] {message}")

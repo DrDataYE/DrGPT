@@ -2,7 +2,41 @@
 
 All notable changes to DrGPT will be documented in this file.
 
-## [2.2.0] - 2025-01-10
+## [2.4.0] - 2025-01-10
+
+### 🔄 Auto-Update & Documentation Improvements
+
+### Added
+- **Auto-Update Feature** (`--update`): Automatically update DrGPT to the latest version
+  - Checks both PyPI and GitHub for latest releases
+  - Smart version comparison and update notifications
+  - Safe update process with confirmation prompts
+  - Support for both PyPI stable releases and GitHub development versions
+- **Simplified Documentation**: Reduced redundancy across documentation files
+- **Quick Reference Guide**: Consolidated command reference in `QUICK_REFERENCE.md`
+
+### Improved
+- **Documentation Structure**: Streamlined and consolidated documentation files
+- **Setup Guides**: Simplified Read the Docs and other setup documentation
+- **Version Management**: Enhanced version checking and update notifications
+- **Dependencies**: Added `packaging` library for robust version comparison
+
+### Technical
+- **Update System**: Robust update mechanism with fallback options
+- **Version Detection**: Automatic detection of current and available versions
+- **Progress Indicators**: Rich progress bars for update operations
+- **Error Handling**: Comprehensive error handling for update operations
+
+### Documentation
+- **Reduced Redundancy**: Consolidated repeated information across files
+- **Quick Reference**: New comprehensive quick reference guide
+- **Simplified Setup**: Streamlined setup and configuration documentation
+
+## [2.3.0] - 2025-01-10ngelog
+
+All notable changes to DrGPT will be documented in this file.
+
+## [2.3.0] - 2025-01-10
 
 ### 🚀 Advanced CLI Features & Interactive Modes
 

@@ -11,6 +11,7 @@ from .commands import handle_list_providers, handle_list_models, handle_status, 
 from .interface import handle_interactive_interface
 from .editor import handle_editor_input
 from .query_handler import handle_query
+from ..core.updater import handle_update_command
 
 
 def main() -> None:
@@ -22,6 +23,10 @@ def main() -> None:
     if args.version:
         handle_version()
         return
+    
+    if args.update:
+        success = handle_update_command()
+        sys.exit(0 if success else 1)
     
     if args.list_providers:
         handle_list_providers()

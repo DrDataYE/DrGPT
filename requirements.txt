@@ -1,6 +1,7 @@
 # Core dependencies
 requests>=2.28.0
 rich>=13.0.0
+packaging>=21.0
 
 # Optional dependencies for specific providers
 openai>=1.0.0

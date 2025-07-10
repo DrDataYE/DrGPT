@@ -40,7 +40,7 @@ Fixed
 * **Cross-References**: Fixed all broken internal documentation links
 * **Missing Files**: Created required static directories and placeholder files
 
-[2.2.0] - 2025-01-10
+[2.3.0] - 2025-01-10
 ---------------------
 
 🚀 Advanced CLI Features & Interactive Modes

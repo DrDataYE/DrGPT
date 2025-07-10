@@ -32,6 +32,8 @@ Examples:
   drgpt -o result.md "Explain AI"
   drgpt --provider openai --model gpt-4 "Complex reasoning task"
   drgpt --list-providers
+  drgpt --update
+  drgpt --version
         """
     )
     
@@ -153,6 +155,12 @@ Examples:
         "--status",
         action="store_true",
         help="Show current configuration status"
+    )
+    
+    parser.add_argument(
+        "--update",
+        action="store_true",
+        help="Update DrGPT to the latest version from PyPI/GitHub"
     )
     
     return parser

@@ -25,10 +25,23 @@ DrGPT is a powerful, extensible command-line AI assistant that supports multiple
 ### Installation
 
 ```bash
-# Install from source
+# Install from PyPI (recommended)
+pip install drgpt
+
+# Or install from source
 git clone https://github.com/DrDataYE/drgpt.git
 cd drgpt
 pip install -e .
+```
+
+### Updating
+
+```bash
+# Update to latest version
+drgpt --update
+
+# Check current version
+drgpt --version
 ```
 
 ### Basic Setup
@@ -360,7 +373,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎉 What's New in v2.2.0
+## 🎉 What's New in v2.3.0
 
 - **Enhanced Code Mode**: Pure code generation without explanations
 - **Interactive Shell**: Safe command execution with confirmations
@@ -371,4 +384,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**DrGPT v2.2.0** - The most advanced command-line AI assistant for developers and power users! 🚀
+**DrGPT v2.3.0** - The most advanced command-line AI assistant for developers and power users! 🚀

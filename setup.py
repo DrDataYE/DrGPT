@@ -6,12 +6,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 # Define dependencies directly instead of reading from requirements.txt
 core_requirements = [
     "requests>=2.28.0",
-    "rich>=13.0.0"
+    "rich>=13.0.0",
+    "packaging>=21.0"
 ]
 
 setup(
     name="drgpt",
-    version="2.2.0",
+    version="2.4.0",
     author="DrGPT Contributors",
     author_email="drdataye@gmail.com",
     description="Multi-Provider AI Assistant for developers and power users",

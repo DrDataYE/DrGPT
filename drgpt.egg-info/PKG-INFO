@@ -1,11 +1,11 @@
 Metadata-Version: 2.4
 Name: drgpt
-Version: 2.2.0
+Version: 2.3.0
 Summary: Multi-Provider AI Assistant for developers and power users
 Home-page: https://github.com/DrDataYE/drgpt
 Author: DrGPT Contributors
 Author-email: DrGPT Contributors <drdataye@gmail.com>
-License: MIT
+License-Expression: MIT
 Project-URL: Bug Reports, https://github.com/DrDataYE/drgpt/issues
 Project-URL: Source, https://github.com/DrDataYE/drgpt
 Project-URL: Documentation, https://github.com/DrDataYE/drgpt/blob/main/README.md
@@ -18,7 +18,6 @@ Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Classifier: Topic :: System :: Shells
 Classifier: Topic :: Utilities
 Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
-Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
@@ -43,6 +42,14 @@ Provides-Extra: dev
 Requires-Dist: pytest>=7.0.0; extra == "dev"
 Requires-Dist: black>=22.0.0; extra == "dev"
 Requires-Dist: flake8>=5.0.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=4.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.0.0; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints>=1.12.0; extra == "docs"
+Requires-Dist: myst-parser>=0.18.0; extra == "docs"
+Requires-Dist: sphinx-copybutton>=0.5.0; extra == "docs"
+Requires-Dist: sphinxcontrib-mermaid>=0.7.1; extra == "docs"
+Requires-Dist: furo>=2021.11.16; extra == "docs"
 Dynamic: author
 Dynamic: home-page
 Dynamic: license-file
@@ -410,7 +417,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎉 What's New in v2.2.0
+## 🎉 What's New in v2.3.0
 
 - **Enhanced Code Mode**: Pure code generation without explanations
 - **Interactive Shell**: Safe command execution with confirmations
@@ -421,4 +428,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**DrGPT v2.2.0** - The most advanced command-line AI assistant for developers and power users! 🚀
+**DrGPT v2.3.0** - The most advanced command-line AI assistant for developers and power users! 🚀

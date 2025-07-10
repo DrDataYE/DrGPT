@@ -6,7 +6,6 @@ Handles shell command generation and execution.
 
 import subprocess
 from rich.console import Console
-from rich.prompt import Prompt, Confirm
 
 from .base import BaseMode
 
@@ -114,7 +113,7 @@ def handle_shell_command(command: str) -> None:
     
     while True:
         choice = console.input(
-            "\n[bold white][E]xecute, [D]escribe, [A]bort: [/bold white]",
+            "\n[bold white][E]xecute, [D]escribe, [A]bort (e/d/a): [/bold white]",
         ).lower().strip()
         
         if choice in ['a', 'abort']:

@@ -24,6 +24,7 @@ drgpt/core/__init__.py
 drgpt/core/ai_interface.py
 drgpt/core/config.py
 drgpt/core/manager.py
+drgpt/core/updater.py
 drgpt/modes/__init__.py
 drgpt/modes/base.py
 drgpt/modes/chat.py

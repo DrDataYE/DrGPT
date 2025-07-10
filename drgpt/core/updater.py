@@ -180,7 +180,7 @@ class DrGPTUpdater:
             elif github_available:
                 source = "github"
             else:
-                source = "pypi"  # Default fallback
+                source = "github"  # Default fallback
         
         # Confirm update
         if source == "pypi":

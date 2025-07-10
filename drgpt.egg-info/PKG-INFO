@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: drgpt
-Version: 2.3.0
+Version: 2.4.0
 Summary: Multi-Provider AI Assistant for developers and power users
 Home-page: https://github.com/DrDataYE/drgpt
 Author: DrGPT Contributors
@@ -31,6 +31,7 @@ Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: requests>=2.28.0
 Requires-Dist: rich>=13.0.0
+Requires-Dist: packaging>=21.0
 Provides-Extra: openai
 Requires-Dist: openai>=1.0.0; extra == "openai"
 Provides-Extra: anthropic
@@ -82,10 +83,23 @@ DrGPT is a powerful, extensible command-line AI assistant that supports multiple
 ### Installation
 
 ```bash
-# Install from source
+# Install from PyPI (recommended)
+pip install drgpt
+
+# Or install from source
 git clone https://github.com/DrDataYE/drgpt.git
 cd drgpt
 pip install -e .
+```
+
+### Updating
+
+```bash
+# Update to latest version
+drgpt --update
+
+# Check current version
+drgpt --version
 ```
 
 ### Basic Setup

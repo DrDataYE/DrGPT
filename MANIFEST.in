@@ -3,6 +3,8 @@ include LICENSE
 include CHANGELOG.md
 include requirements.txt
 include pyproject.toml
+include images/logo.svg
+include images/README.md
 recursive-include drgpt *.py
 recursive-include tests *.py
 recursive-exclude * __pycache__

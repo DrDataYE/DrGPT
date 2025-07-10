@@ -96,16 +96,13 @@ Generate clean code without explanations:
 
 ```bash
 # Generate Python function (code only)
-drgpt --code "Create a function to calculate fibonacci numbers"
-drgpt -c "Create a function to calculate fibonacci numbers"  # Short form
+drgpt -c "Create a function to calculate fibonacci numbers"  
 
 # Generate JavaScript code
-drgpt --code "Create a React component for user authentication"
-drgpt -c "Create a React component for user authentication"  # Short form
+drgpt -c "Create a React component for user authentication"  
 
 # Generate SQL query
-drgpt --code "Write a query to find top 10 customers by revenue"
-drgpt -c "Write a query to find top 10 customers by revenue"  # Short form
+drgpt -c "Write a query to find top 10 customers by revenue"  
 ```
 
 ### 🛠️ Interactive Shell Commands
@@ -114,8 +111,7 @@ Generate and execute shell commands safely:
 
 ```bash
 # Generate shell command with execution options
-drgpt --shell "Install Docker on Ubuntu"
-drgpt -s "Install Docker on Ubuntu"  # Short form
+drgpt -s "Install Docker on Ubuntu"  
 
 # Output shows:
 # Generated Command: sudo apt-get update && sudo apt-get install docker.io
@@ -133,8 +129,7 @@ Use your preferred text editor for complex prompts:
 
 ```bash
 # Open editor for input composition
-drgpt --editor
-drgpt -e  # Short form
+drgpt -e  
 
 # Supports: VS Code, nano, vim, notepad, gedit
 # Respects EDITOR and VISUAL environment variables
@@ -146,8 +141,7 @@ Start a continuous chat session:
 
 ```bash
 # Launch interactive mode
-drgpt --interface
-drgpt -i  # Short form
+drgpt -i  
 
 # Interactive session:
 ! What is machine learning?
@@ -178,8 +172,7 @@ drgpt --no-streaming "Explain machine learning concepts"
 drgpt --no-markdown "Simple explanation without formatting"
 
 # Save response to file
-drgpt --output response.md "Generate API documentation"
-drgpt -o response.md "Generate API documentation"  # Short form
+drgpt -o response.md "Generate API documentation"  
 ```
 
 ### 🔧 Provider Management
@@ -205,12 +198,10 @@ drgpt --temperature 0.8 "Write a creative story about AI"
 drgpt --max-tokens 500 "Summarize machine learning"
 
 # Combine multiple options
-drgpt --code --no-streaming --output functions.py "Create utility functions for file operations"
 drgpt -c --no-streaming -o functions.py "Create utility functions for file operations"  # With shortcuts
 
 # Chat session
-drgpt --chat session_1 "Let's discuss Python programming"
-drgpt -ch session_1 "Let's discuss Python programming"  # Short form
+drgpt -ch session_1 "Let's discuss Python programming"  
 ```
 
 ## 🛡️ Security Features
@@ -288,12 +279,17 @@ drgpt/
 └── setup.py              # Package setup
 ```
 
-## 📚 Documentation
 
-- **[Advanced Features Guide](ADVANCED_FEATURES.md)** - Detailed feature documentation
-- **[Changelog](CHANGELOG.md)** - Version history and updates
-- **[Contributing](CONTRIBUTING.md)** - Development guidelines
-- **[Restructure Summary](RESTRUCTURE_SUMMARY.md)** - Project evolution
+## 📷 Screenshots
+
+![Interactive Chat Mode](./images/chat_mode.jpg)
+*Example of interactive chat session in AI interface.*
+
+![Shell Mode Execution](./images/shell_mode.jpg)
+*Example of safe shell command generation and execution.*
+
+![Code Generation Mode](./images/code_mode.jpg)
+*Example of pure code generation in markdown output.*
 
 ## 🎯 Use Cases
 
@@ -336,30 +332,23 @@ drgpt -c -o code.py "Create a web scraper"
 ### For Developers
 ```bash
 # Code generation workflow
-drgpt --editor  # Compose complex requirements
-drgpt -e        # Short form
-drgpt --code "Implement user authentication with JWT"
-drgpt -c "Implement user authentication with JWT"  # Short form
-drgpt --code "Create database migration for user roles"
-drgpt -c "Create database migration for user roles"  # Short form
+drgpt -e        
+drgpt -c "Implement user authentication with JWT"  
+drgpt -c "Create database migration for user roles"  
 ```
 
 ### For System Administrators
 ```bash
 # System management workflow
-drgpt --shell "Setup nginx with SSL certificate"
-drgpt -s "Setup nginx with SSL certificate"  # Short form
-drgpt --shell "Configure automatic backups"
-drgpt -s "Configure automatic backups"      # Short form
-drgpt --shell "Monitor system performance"
-drgpt -s "Monitor system performance"       # Short form
+drgpt -s "Setup nginx with SSL certificate"  
+drgpt -s "Configure automatic backups"      
+drgpt -s "Monitor system performance"       
 ```
 
 ### For Learning and Exploration
 ```bash
 # Interactive learning session
-drgpt --interface
-drgpt -i  # Short form
+drgpt -i  
 ! What is Kubernetes?
 ! code: Show me a simple Kubernetes deployment
 ! shell: Install kubectl on my system

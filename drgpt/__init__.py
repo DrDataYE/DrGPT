@@ -5,7 +5,7 @@ A powerful command-line AI assistant that supports multiple AI providers
 including OpenAI, Anthropic, Google, and custom APIs.
 """
 
-__version__ = "1.0.0"
+__version__ = "2.2.0"
 __author__ = "DrGPT Contributors"
 __license__ = "MIT"
 __description__ = "Multi-Provider AI Assistant for developers and power users"

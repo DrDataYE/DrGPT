@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'DrGPT'
-copyright = '2024, DrGPT Contributors'
+copyright = '2025, DrGPT Contributors'
 author = 'DrGPT Team'
 release = '2.2.0'
 

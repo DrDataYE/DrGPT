@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drgpt"
+version = "2.2.0"
+authors = [
+    {name = "DrGPT Contributors", email = "drdataye@gmail.com"},
+]
+description = "Multi-Provider AI Assistant for developers and power users"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Shells",
+    "Topic :: Utilities",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+keywords = [
+    "ai", "gpt", "openai", "anthropic", "claude", 
+    "terminal", "cli", "assistant", "chatgpt",
+    "artificial-intelligence", "command-line",
+    "developer-tools", "productivity"
+]
+dependencies = [
+    "requests>=2.28.0",
+    "rich>=13.0.0"
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+anthropic = ["anthropic>=0.25.0"]
+all = ["openai>=1.0.0", "anthropic>=0.25.0"]
+dev = ["pytest>=7.0.0", "black>=22.0.0", "flake8>=5.0.0"]
+docs = [
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=1.0.0", 
+    "sphinx-autodoc-typehints>=1.12.0",
+    "myst-parser>=0.18.0",
+    "sphinx-copybutton>=0.5.0",
+    "sphinxcontrib-mermaid>=0.7.1",
+    "furo>=2021.11.16"
+]
+
+[project.scripts]
+drgpt = "drgpt.cli.main:main"
+
+[project.urls]
+"Bug Reports" = "https://github.com/DrDataYE/drgpt/issues"
+"Source" = "https://github.com/DrDataYE/drgpt"
+"Documentation" = "https://github.com/DrDataYE/drgpt/blob/main/README.md"
+"Changelog" = "https://github.com/DrDataYE/drgpt/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["drgpt*"]
+
+[tool.setuptools.package-data]
+drgpt = ["*.md", "*.txt", "*.json"]

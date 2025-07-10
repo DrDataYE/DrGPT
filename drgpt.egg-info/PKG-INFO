@@ -56,13 +56,19 @@ Dynamic: home-page
 Dynamic: license-file
 Dynamic: requires-python
 
-# DrGPT - Multi-Provider AI Assistant
+<div align="center">
+  <img src="./images/logo.svg" alt="DrGPT Logo" width="200" height="200">
+  
+  # DrGPT - Multi-Provider AI Assistant
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+  [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+  
+  **A powerful, extensible command-line AI assistant that supports multiple AI providers**
+</div>
 
-DrGPT is a powerful, extensible command-line AI assistant that supports multiple AI providers including OpenAI, Anthropic, Google, and custom APIs. It's designed for developers, system administrators, and power users who want intelligent assistance directly in their terminal.
+DrGPT is designed for developers, system administrators, and power users who want intelligent assistance directly in their terminal. It supports OpenAI, Anthropic, Google, and custom APIs.
 
 ## ✨ Features
 

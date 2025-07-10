@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./images/logo.svg" alt="DrGPT Logo" width="200" height="200">
+  <img src="./images/logo.png" alt="DrGPT Logo" width="200" height="200">
   
   # DrGPT - Multi-Provider AI Assistant
 

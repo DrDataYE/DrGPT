@@ -32,8 +32,8 @@ html_theme = 'furo'
 html_static_path = ['_static']
 html_title = 'DrGPT Documentation'
 html_short_title = 'DrGPT'
-html_logo = '../logo.svg'
-html_favicon = '../logo.svg'
+html_logo = '../logo.png'
+html_favicon = '../logo.png'
 
 # MyST configuration
 source_suffix = {

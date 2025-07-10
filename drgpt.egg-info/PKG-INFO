@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: drgpt
-Version: 2.5.0
+Version: 2.6.0
 Summary: Multi-Provider AI Assistant for developers and power users
 Home-page: https://github.com/DrDataYE/drgpt
 Author: DrGPT Contributors
@@ -57,7 +57,7 @@ Dynamic: license-file
 Dynamic: requires-python
 
 <div align="center">
-  <img src="./images/logo.svg" alt="DrGPT Logo" width="200" height="200">
+  <img src="./images/logo.png" alt="DrGPT Logo" width="200" height="200">
   
   # DrGPT - Multi-Provider AI Assistant
 

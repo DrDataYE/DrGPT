@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "drgpt"
-version = "2.5.0"
+version = "2.6.0"
 authors = [
     {name = "DrGPT Contributors", email = "drdataye@gmail.com"},
 ]

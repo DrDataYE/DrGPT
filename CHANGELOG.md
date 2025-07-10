@@ -2,7 +2,7 @@
 
 All notable changes to DrGPT will be documented in this file.
 
-## [2.5.0] - 2025-01-10
+## [2.6.0] - 2025-01-10
 
 ### 🔄 Auto-Update & Documentation Improvements
 

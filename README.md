@@ -37,7 +37,7 @@ pip install -e .
 ### Updating
 
 ```bash
-# Update to latest version
+# Update to latest version from GitHub
 drgpt --update
 
 # Check current version

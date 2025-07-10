@@ -7,11 +7,12 @@ All notable changes to DrGPT will be documented in this file.
 ### 🔄 Auto-Update & Documentation Improvements
 
 ### Added
-- **Auto-Update Feature** (`--update`): Automatically update DrGPT to the latest version
-  - Checks both PyPI and GitHub for latest releases
+- **Auto-Update Feature** (`--update`): Automatically update DrGPT to the latest version from GitHub
+  - Checks GitHub releases for latest versions
   - Smart version comparison and update notifications
   - Safe update process with confirmation prompts
-  - Support for both PyPI stable releases and GitHub development versions
+  - Uses `--force-reinstall` for clean updates
+  - GitHub-only updates for latest features and fixes
 - **Simplified Documentation**: Reduced redundancy across documentation files
 - **Quick Reference Guide**: Consolidated command reference in `QUICK_REFERENCE.md`
 
@@ -118,20 +119,8 @@ This is a complete rewrite of DrGPT with professional architecture and improved 
 - **Test Suite**: Comprehensive testing framework
 - **Documentation**: Professional README and developer guides
 
-### 🔧 Changed
-- **Project Structure**: Moved from `src/` to `drgpt/` package structure
-- **Entry Points**: New CLI interface with `drgpt` command
-- **Configuration**: Moved from `~/.config/dr_gpt/` to `~/.config/drgpt/`
-- **Dependencies**: Reduced to core dependencies (requests, rich)
-- **API Interface**: Unified interface for all AI providers
-- **Error Handling**: Improved error messages and fallback mechanisms
 
-### 🗑️ Removed
-- Legacy `src/` directory structure
-- Experimental plugin system (will be reimplemented)
-- Old shell scripts and test files
-- Arabic comments (now using English for international development)
-- Unused dependencies (click, typer, distro)
+
 
 ### 🔒 Security
 - Secure API key storage with environment variable support

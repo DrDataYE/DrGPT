@@ -235,6 +235,26 @@ class Config:
         
         return api_key or ""
     
+    def get_api_key_silent(self, provider: Optional[str] = None) -> str:
+        """Get API key for a specific provider without prompting user
+        
+        Args:
+            provider: Provider name. If None, uses default provider.
+            
+        Returns:
+            API key string or empty string if not found
+        """
+        if provider is None:
+            provider = self.get("DEFAULT_PROVIDER")
+        
+        provider_config = self.get_provider_config(provider)
+        api_key_env = provider_config["api_key_env"]
+        
+        # Check environment variable first, then config file
+        api_key = os.getenv(api_key_env) or self.get(api_key_env)
+        
+        return api_key or ""
+    
     def set_provider(self, provider: str, model: Optional[str] = None, 
                     base_url: Optional[str] = None) -> None:
         """Set the default AI provider and optionally model and base URL

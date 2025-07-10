@@ -236,24 +236,39 @@ class AIInterface:
         self._initialize_providers()
     
     def _initialize_providers(self) -> None:
-        """Initialize available providers based on configuration"""
-        # OpenAI
-        openai_key = config.get_api_key("openai")
-        if openai_key:
-            openai_config = config.get_provider_config("openai")
-            self.providers["openai"] = OpenAIProvider(
-                openai_key, 
-                openai_config["base_url"]
-            )
+        """Initialize available providers based on configuration
         
-        # Anthropic
-        anthropic_key = config.get_api_key("anthropic")
+        On first run, only prompts for OpenAI API key (default provider).
+        Other providers are initialized only if their keys already exist.
+        """
+        # Only initialize OpenAI as default provider on first run
+        default_provider = config.get("DEFAULT_PROVIDER")
+        
+        # OpenAI - always initialize if it's the default provider
+        if default_provider == "openai":
+            openai_key = config.get_api_key("openai")
+            if openai_key:
+                openai_config = config.get_provider_config("openai")
+                self.providers["openai"] = OpenAIProvider(
+                    openai_key, 
+                    openai_config["base_url"]
+                )
+        
+        # Anthropic - only initialize if key already exists (don't prompt)
+        anthropic_key = config.get_api_key_silent("anthropic")
         if anthropic_key:
             anthropic_config = config.get_provider_config("anthropic")
             self.providers["anthropic"] = AnthropicProvider(
                 anthropic_key,
                 anthropic_config["base_url"]
             )
+        
+        # Google - only initialize if key already exists (don't prompt)
+        google_key = config.get_api_key_silent("google")
+        if google_key:
+            google_config = config.get_provider_config("google")
+            # Note: Google provider class would need to be implemented
+            # self.providers["google"] = GoogleProvider(google_key, google_config["base_url"])
         
         # Always have custom provider as fallback
         self.providers["custom"] = CustomProvider("", "")
@@ -357,6 +372,33 @@ class AIInterface:
         for provider_name, provider_config in SUPPORTED_PROVIDERS.items():
             result[provider_name.upper()] = provider_config["models"]
         return result
+    
+    def add_provider(self, provider_name: str, api_key: str) -> bool:
+        """Add a new provider with API key
+        
+        Args:
+            provider_name: Name of the provider to add
+            api_key: API key for the provider
+            
+        Returns:
+            True if provider was added successfully, False otherwise
+        """
+        if provider_name not in SUPPORTED_PROVIDERS:
+            return False
+        
+        provider_config = config.get_provider_config(provider_name)
+        
+        # Store the API key
+        config.set(provider_config["api_key_env"], api_key)
+        
+        # Initialize the provider
+        if provider_name == "openai":
+            self.providers["openai"] = OpenAIProvider(api_key, provider_config["base_url"])
+        elif provider_name == "anthropic":
+            self.providers["anthropic"] = AnthropicProvider(api_key, provider_config["base_url"])
+        # Add other providers as needed
+        
+        return True
 
 
 # Global AI interface instance

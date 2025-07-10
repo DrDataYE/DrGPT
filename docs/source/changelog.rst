@@ -255,7 +255,7 @@ Planned features for upcoming releases:
 * **Plugin System**: Extensible plugin architecture
 * **Batch Processing**: Process multiple queries efficiently
 
-**v2.6.0** (Planned)
+**v2.7.0** (Planned)
 ~~~~~~~~~~~~~~~~~~~~
 
 * **Web Interface**: Optional web UI for DrGPT

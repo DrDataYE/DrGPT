@@ -368,7 +368,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎉 What's New in v2.3.0
+## 🎉 What's New in v2.7.0
 
 - **Enhanced Code Mode**: Pure code generation without explanations
 - **Interactive Shell**: Safe command execution with confirmations
@@ -379,4 +379,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**DrGPT v2.3.0** - The most advanced command-line AI assistant for developers and power users! 🚀
+**DrGPT v2.7.0** - The most advanced command-line AI assistant for developers and power users! 🚀

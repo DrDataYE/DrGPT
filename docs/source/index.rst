@@ -1,7 +1,7 @@
 .. raw:: html
 
    <div align="center">
-     <img src="../logo.svg" alt="DrGPT Logo" width="200" height="200">
+     <img src="../logo.png" alt="DrGPT Logo" width="200" height="200">
    </div>
 
 DrGPT Documentation

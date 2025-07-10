@@ -1,0 +1,2 @@
+[console_scripts]
+drgpt = drgpt.cli.main:main

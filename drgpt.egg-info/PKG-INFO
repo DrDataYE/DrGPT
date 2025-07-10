@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: drgpt
+Version: 1.0.0
+Summary: Multi-Provider AI Assistant for developers and power users
+Home-page: https://github.com/DrDataYE/drgpt
+Author: DrGPT Contributors
+Author-email: drdataye@gmail.com
+Project-URL: Bug Reports, https://github.com/DrDataYE/drgpt/issues
+Project-URL: Source, https://github.com/DrDataYE/drgpt
+Project-URL: Documentation, https://github.com/DrDataYE/drgpt/blob/main/README.md
+Project-URL: Changelog, https://github.com/DrDataYE/drgpt/blob/main/CHANGELOG.md
+Keywords: ai,gpt,openai,anthropic,claude,terminal,cli,assistant,chatgpt,artificial-intelligence,command-line,developer-tools,productivity
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Shells
+Classifier: Topic :: Utilities
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.28.0
+Requires-Dist: rich>=13.0.0
+Provides-Extra: openai
+Requires-Dist: openai>=1.0.0; extra == "openai"
+Provides-Extra: anthropic
+Requires-Dist: anthropic>=0.25.0; extra == "anthropic"
+Provides-Extra: all
+Requires-Dist: openai>=1.0.0; extra == "all"
+Requires-Dist: anthropic>=0.25.0; extra == "all"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

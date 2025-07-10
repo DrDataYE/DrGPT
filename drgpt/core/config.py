@@ -1,0 +1,287 @@
+"""
+Configuration management for DrGPT
+
+This module handles all configuration related functionality including
+provider settings, API keys, and user preferences.
+"""
+
+import os
+from getpass import getpass
+from pathlib import Path
+from tempfile import gettempdir
+from typing import Any, Dict, Optional
+
+
+# Configuration paths
+CONFIG_FOLDER = os.path.expanduser("~/.config")
+DRGPT_CONFIG_FOLDER = Path(CONFIG_FOLDER) / "drgpt"
+DRGPT_CONFIG_PATH = DRGPT_CONFIG_FOLDER / "config"
+ROLE_STORAGE_PATH = DRGPT_CONFIG_FOLDER / "roles"
+CHAT_CACHE_PATH = Path(gettempdir()) / "drgpt_chats"
+CACHE_PATH = Path(gettempdir()) / "drgpt_cache"
+
+# Supported AI providers configuration
+SUPPORTED_PROVIDERS = {
+    "openai": {
+        "name": "OpenAI",
+        "base_url": "https://api.openai.com/v1",
+        "models": ["gpt-4", "gpt-4-turbo", "gpt-3.5-turbo", "gpt-4o", "gpt-4o-mini"],
+        "api_key_env": "OPENAI_API_KEY",
+        "requires_auth": True
+    },
+    "anthropic": {
+        "name": "Anthropic",
+        "base_url": "https://api.anthropic.com/v1",
+        "models": ["claude-3-haiku", "claude-3-sonnet", "claude-3-opus"],
+        "api_key_env": "ANTHROPIC_API_KEY",
+        "requires_auth": True
+    },
+    "google": {
+        "name": "Google",
+        "base_url": "https://generativelanguage.googleapis.com/v1",
+        "models": ["gemini-pro", "gemini-pro-vision"],
+        "api_key_env": "GOOGLE_API_KEY",
+        "requires_auth": True
+    },
+    "huggingface": {
+        "name": "Hugging Face",
+        "base_url": "https://api-inference.huggingface.co/models",
+        "models": ["microsoft/DialoGPT-large", "facebook/blenderbot-400M-distill"],
+        "api_key_env": "HUGGINGFACE_API_KEY",
+        "requires_auth": True
+    },
+    "custom": {
+        "name": "Custom",
+        "base_url": "",
+        "models": [],
+        "api_key_env": "CUSTOM_API_KEY",
+        "requires_auth": False
+    }
+}
+
+# Default configuration values
+DEFAULT_CONFIG = {
+    # Cache settings
+    "CHAT_CACHE_PATH": str(CHAT_CACHE_PATH),
+    "CACHE_PATH": str(CACHE_PATH),
+    "CHAT_CACHE_LENGTH": 100,
+    "CACHE_LENGTH": 100,
+    "REQUEST_TIMEOUT": 60,
+    
+    # AI Provider settings
+    "DEFAULT_PROVIDER": "openai",
+    "DEFAULT_MODEL": "gpt-4o-mini",
+    "API_BASE_URL": "https://api.openai.com/v1",
+    
+    # API Keys (empty by default)
+    "OPENAI_API_KEY": "",
+    "ANTHROPIC_API_KEY": "",
+    "GOOGLE_API_KEY": "",
+    "HUGGINGFACE_API_KEY": "",
+    "CUSTOM_API_KEY": "",
+    
+    # UI and behavior settings
+    "DEFAULT_COLOR": "magenta",
+    "ROLE_STORAGE_PATH": str(ROLE_STORAGE_PATH),
+    "DEFAULT_EXECUTE_SHELL_CMD": False,
+    "DISABLE_STREAMING": False,
+    "CODE_THEME": "dracula",
+    
+    # Advanced AI settings
+    "TEMPERATURE": 0.7,
+    "MAX_TOKENS": 2048,
+    "TOP_P": 1.0,
+}
+
+
+class Config:
+    """Configuration manager for DrGPT"""
+    
+    def __init__(self, config_path: Optional[Path] = None):
+        """Initialize configuration manager
+        
+        Args:
+            config_path: Path to configuration file. If None, uses default.
+        """
+        self.config_path = config_path or DRGPT_CONFIG_PATH
+        self._config = DEFAULT_CONFIG.copy()
+        self._load_config()
+    
+    def _load_config(self) -> None:
+        """Load configuration from file and environment variables"""
+        # Load from environment variables first
+        for key in self._config:
+            env_value = os.getenv(key)
+            if env_value is not None:
+                self._config[key] = self._convert_value(env_value)
+        
+        # Then load from config file if it exists
+        if self.config_path.exists():
+            self._read_config_file()
+        else:
+            # Create config directory if it doesn't exist
+            self.config_path.parent.mkdir(parents=True, exist_ok=True)
+            self._write_config_file()
+    
+    def _read_config_file(self) -> None:
+        """Read configuration from file"""
+        try:
+            with open(self.config_path, "r", encoding="utf-8") as file:
+                for line in file:
+                    line = line.strip()
+                    if line and not line.startswith("#"):
+                        if "=" in line:
+                            key, value = line.split("=", 1)
+                            key = key.strip()
+                            value = value.strip()
+                            if key in self._config:
+                                self._config[key] = self._convert_value(value)
+        except Exception as e:
+            print(f"Warning: Could not read config file: {e}")
+    
+    def _write_config_file(self) -> None:
+        """Write configuration to file"""
+        try:
+            with open(self.config_path, "w", encoding="utf-8") as file:
+                file.write("# DrGPT Configuration File\n")
+                file.write("# This file is automatically generated\n\n")
+                
+                for key, value in self._config.items():
+                    file.write(f"{key}={value}\n")
+        except Exception as e:
+            print(f"Warning: Could not write config file: {e}")
+    
+    def _convert_value(self, value: str) -> Any:
+        """Convert string value to appropriate type"""
+        if value.lower() in ("true", "false"):
+            return value.lower() == "true"
+        
+        try:
+            # Try integer first
+            return int(value)
+        except ValueError:
+            try:
+                # Then float
+                return float(value)
+            except ValueError:
+                # Keep as string
+                return value
+    
+    def get(self, key: str, default: Any = None) -> Any:
+        """Get configuration value
+        
+        Args:
+            key: Configuration key
+            default: Default value if key not found
+            
+        Returns:
+            Configuration value
+        """
+        return self._config.get(key, default)
+    
+    def set(self, key: str, value: Any) -> None:
+        """Set configuration value
+        
+        Args:
+            key: Configuration key
+            value: Configuration value
+        """
+        self._config[key] = value
+        self._write_config_file()
+    
+    def get_provider_config(self, provider: Optional[str] = None) -> Dict[str, Any]:
+        """Get configuration for a specific AI provider
+        
+        Args:
+            provider: Provider name. If None, uses default provider.
+            
+        Returns:
+            Provider configuration dictionary
+            
+        Raises:
+            ValueError: If provider is not supported
+        """
+        if provider is None:
+            provider = self.get("DEFAULT_PROVIDER")
+        
+        if provider not in SUPPORTED_PROVIDERS:
+            raise ValueError(f"Unsupported provider: {provider}")
+        
+        return SUPPORTED_PROVIDERS[provider]
+    
+    def get_api_key(self, provider: Optional[str] = None) -> str:
+        """Get API key for a specific provider
+        
+        Args:
+            provider: Provider name. If None, uses default provider.
+            
+        Returns:
+            API key string
+        """
+        if provider is None:
+            provider = self.get("DEFAULT_PROVIDER")
+        
+        provider_config = self.get_provider_config(provider)
+        api_key_env = provider_config["api_key_env"]
+        
+        # Check environment variable first, then config file
+        api_key = os.getenv(api_key_env) or self.get(api_key_env)
+        
+        if not api_key and provider_config.get("requires_auth", True):
+            # Prompt user for API key
+            api_key = getpass(f"Please enter your {provider.upper()} API key: ")
+            if api_key:
+                self.set(api_key_env, api_key)
+        
+        return api_key or ""
+    
+    def set_provider(self, provider: str, model: Optional[str] = None, 
+                    base_url: Optional[str] = None) -> None:
+        """Set the default AI provider and optionally model and base URL
+        
+        Args:
+            provider: Provider name
+            model: Model name (optional)
+            base_url: Base URL (optional)
+            
+        Raises:
+            ValueError: If provider is not supported
+        """
+        if provider not in SUPPORTED_PROVIDERS:
+            raise ValueError(f"Unsupported provider: {provider}")
+        
+        self.set("DEFAULT_PROVIDER", provider)
+        
+        provider_config = SUPPORTED_PROVIDERS[provider]
+        
+        if model:
+            if (model not in provider_config["models"] and 
+                provider != "custom" and 
+                provider_config["models"]):
+                print(f"Warning: Model {model} not in default list for {provider}")
+            self.set("DEFAULT_MODEL", model)
+        elif provider_config["models"]:
+            # Set first available model as default
+            self.set("DEFAULT_MODEL", provider_config["models"][0])
+        
+        if base_url:
+            self.set("API_BASE_URL", base_url)
+        elif provider_config["base_url"]:
+            self.set("API_BASE_URL", provider_config["base_url"])
+    
+    def list_providers(self) -> Dict[str, Dict[str, Any]]:
+        """List all supported providers with their models
+        
+        Returns:
+            Dictionary of provider configurations
+        """
+        return SUPPORTED_PROVIDERS.copy()
+    
+    def reset_to_defaults(self) -> None:
+        """Reset configuration to default values"""
+        self._config = DEFAULT_CONFIG.copy()
+        self._write_config_file()
+
+
+# Global configuration instance
+config = Config()

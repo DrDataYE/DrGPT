@@ -22,7 +22,7 @@ export OPENAI_API_KEY="your-key"
 | `drgpt -c "task"` | Code generation only |
 | `drgpt -s "task"` | Shell commands with execution |
 | `drgpt -e` | Text editor for complex prompts |
-| `drgpt -i` | Interactive chat mode |
+| `drgpt -i` | Terminal aliases setup |
 
 ## Quick Commands
 
@@ -31,7 +31,7 @@ export OPENAI_API_KEY="your-key"
 | `-c` | `--code` | Generate code without explanations |
 | `-s` | `--shell` | Interactive shell commands |
 | `-e` | `--editor` | Open text editor for input |
-| `-i` | `--interface` | Start interactive chat |
+| `-i` | `--interface` | Setup terminal aliases |
 | `-o` | `--output` | Save to file |
 | `--update` | Update DrGPT to latest version |
 
@@ -54,11 +54,26 @@ drgpt -c "fibonacci calculator"
 # Safe shell command execution
 drgpt -s "install docker"
 
-# Interactive session
+# Setup terminal aliases (one-time)
 drgpt -i
+
+# After setup, use aliases directly:
+: "What is AI?"              # Chat
+s: "find Python files"       # Shell commands
+c: "create sorting function"  # Code only
+e:                           # Editor
 
 # Save response to file
 drgpt -o response.md "explain machine learning"
 ```
+
+## Terminal Aliases (after `drgpt -i`)
+
+| Alias | Equivalent | Purpose |
+|-------|------------|---------|
+| `!` | `drgpt` | Chat with AI |
+| `s:` | `drgpt -s` | Shell commands |
+| `c:` | `drgpt -c` | Code generation |
+| `e:` | `drgpt -e` | Open editor |
 
 For complete documentation: https://drgpt.readthedocs.io

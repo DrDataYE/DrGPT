@@ -4,6 +4,7 @@ Shell mode for DrGPT
 Handles shell command generation and execution.
 """
 
+import sys
 import subprocess
 from rich.console import Console
 
@@ -110,6 +111,12 @@ def handle_shell_command(command: str) -> None:
     """
     # Display the generated command
     console.print(command, style="dim")
+    
+    # Check if we're in a pipe/non-interactive environment
+    if not sys.stdin.isatty():
+        console.print("[[yellow]![/yellow]] Non-interactive mode detected. Command will not be executed automatically.")
+        console.print("[[bold blue]ℹ[/bold blue]] To execute this command, copy and run it manually.")
+        return
     
     while True:
         choice = console.input(

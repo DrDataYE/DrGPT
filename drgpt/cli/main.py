@@ -12,6 +12,7 @@ from .interface import handle_interactive_interface
 from .editor import handle_editor_input
 from .query_handler import handle_query
 from ..core.updater import handle_update_command
+from ..utils.console import print_error
 
 
 def main() -> None:
@@ -48,6 +49,25 @@ def main() -> None:
     # Handle editor input
     if args.editor:
         args.prompt = handle_editor_input()
+    
+    # Check for stdin input if no prompt provided
+    if not args.prompt and not sys.stdin.isatty():
+        try:
+            stdin_content = sys.stdin.read().strip()
+            if stdin_content:
+                args.prompt = stdin_content
+        except Exception as e:
+            print_error(f"Error reading from stdin: {e}")
+            sys.exit(1)
+    # If both prompt and stdin content are available, combine them
+    elif args.prompt and not sys.stdin.isatty():
+        try:
+            stdin_content = sys.stdin.read().strip()
+            if stdin_content:
+                args.prompt = f"{args.prompt}\n\nInput data:\n{stdin_content}"
+        except Exception as e:
+            print_error(f"Error reading from stdin: {e}")
+            sys.exit(1)
     
     # Handle regular query
     handle_query(args)

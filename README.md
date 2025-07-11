@@ -141,32 +141,33 @@ drgpt -e
 # Respects EDITOR and VISUAL environment variables
 ```
 
-### 💬 Interactive AI Interface
+### � Terminal Integration
 
-Start a continuous chat session:
+Setup DrGPT aliases in your terminal for seamless AI assistance:
 
 ```bash
-# Launch interactive mode
+# Setup terminal aliases (one-time setup)
 drgpt -i  
 
-# Interactive session:
-! What is machine learning?
-! code: Create a Python class for data processing
-! shell: Find all Python files larger than 1MB
-! help
-! exit
+# After setup, use these shortcuts directly in your terminal:
+! "What is machine learning?"              # Chat with AI
+s: "Install Docker on Ubuntu"              # Shell commands with execution
+c: "Create a Python sorting function"      # Code generation only
+e:                                          # Open editor for complex prompts
 ```
 
-**Special Commands:**
-- `help` - Show available commands
-- `status` - Current configuration
-- `providers` - List AI providers
-- `clear` - Clear screen
-- `exit/quit` - Exit interface
+**How it works:**
+- `!` prefix - Direct AI chat responses
+- `s:` prefix - Generate shell commands with execution options
+- `c:` prefix - Generate clean code without explanations  
+- `e:` - Open your default editor for complex prompt composition
 
-**Special Modes:**
-- `code: [prompt]` - Code-only responses
-- `shell: [prompt]` - Shell commands with execution
+**Platform Support:**
+- **Windows**: PowerShell profile integration
+- **macOS/Linux**: Bash/Zsh profile integration
+- **Fish Shell**: Native function support
+
+**Setup is automatic** - just run `drgpt -i` once and restart your terminal!
 
 ### 🎛️ Output Options
 
@@ -308,7 +309,7 @@ DrGPT provides convenient shortcuts for frequently used options:
 | `--code` | `-c` | Generate code only (no explanations) |
 | `--shell` | `-s` | Generate shell commands with execution options |
 | `--editor` | `-e` | Open text editor for input composition |
-| `--interface` | `-i` | Start interactive AI interface |
+| `--interface` | `-i` | Setup terminal aliases (!, s:, c:, e:) |
 | `--chat` | `-ch` | Start or continue a chat session |
 | `--output` | `-o` | Save response to file |
 
@@ -324,7 +325,7 @@ drgpt -s "List all processes"
 drgpt -e
 
 # Instead of: drgpt --interface
-drgpt -i
+drgpt -i  # Setup terminal aliases
 
 # Instead of: drgpt --output result.md "Explain AI"
 drgpt -o result.md "Explain AI"

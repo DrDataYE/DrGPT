@@ -74,7 +74,10 @@ def handle_query(args: argparse.Namespace) -> None:
     
     # Save to file if requested
     if args.output:
-        save_response_to_file(response_chunks, args.output)
+        # Determine if we're in code or shell mode
+        is_code_mode = args.code if hasattr(args, 'code') else False
+        is_shell_mode = args.shell if hasattr(args, 'shell') else False
+        save_response_to_file(response_chunks, args.output, is_code_mode, is_shell_mode)
 
 
 def _get_mode_instance(args: argparse.Namespace):

@@ -186,7 +186,7 @@ alias drg_code="drgpt --code"
 alias drg_editor="drgpt --editor"
 
 # Shorter aliases - using functions for complex ones
-function \\:() { drgpt "$@"; }
+function :() { drgpt "$@"; }
 function s:() { drgpt --shell "$@"; }
 function c:() { drgpt --code "$@"; }
 function e:() { drgpt --editor; }

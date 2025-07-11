@@ -35,7 +35,6 @@ drgpt/utils/__init__.py
 drgpt/utils/console.py
 drgpt/utils/file_handler.py
 drgpt/utils/validation.py
-images/README.md
 images/logo.png
 tests/test_basic.py
 tests/test_drgpt.py

@@ -9,7 +9,7 @@
 project = 'DrGPT'
 copyright = '2025, DrGPT Contributors'
 author = 'DrGPT Team'
-release = '2.7.1'
+release = '2.7.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

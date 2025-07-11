@@ -69,13 +69,13 @@ Development Workflow
    .. code-block:: bash
    
       # Fork on GitHub, then clone your fork
-      git clone https://github.com/your-username/drgpt.git
+      git clone https://github.com/DrDataYE/drgpt.git
 
 2. **Create Feature Branch**
    
    .. code-block:: bash
    
-      git checkout -b feature/your-feature-name
+      git checkout -b feature/main
 
 3. **Make Changes**
    

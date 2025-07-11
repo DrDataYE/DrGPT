@@ -28,7 +28,7 @@ For development or the latest features:
 
 .. code-block:: bash
 
-   git clone https://github.com/yourusername/drgpt.git
+   git clone https://github.com/DrDataYE/drgpt.git
    cd drgpt
    pip install -e .
 

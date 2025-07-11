@@ -12,7 +12,7 @@ core_requirements = [
 
 setup(
     name="drgpt",
-    version="2.7.0",
+    version="2.7.1",
     author="DrGPT Contributors",
     author_email="drdataye@gmail.com",
     description="Multi-Provider AI Assistant for developers and power users",

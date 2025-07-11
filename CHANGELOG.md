@@ -2,7 +2,7 @@
 
 All notable changes to DrGPT will be documented in this file.
 
-## [2.7.0] - 2025-01-10
+## [2.7.1] - 2025-01-10
 
 ### 🔄 Auto-Update & Documentation Improvements
 
@@ -33,11 +33,11 @@ All notable changes to DrGPT will be documented in this file.
 - **Quick Reference**: New comprehensive quick reference guide
 - **Simplified Setup**: Streamlined setup and configuration documentation
 
-## [2.7.0] - 2025-01-10ngelog
+## [2.7.1] - 2025-01-10ngelog
 
 All notable changes to DrGPT will be documented in this file.
 
-## [2.7.0] - 2025-01-10
+## [2.7.1] - 2025-01-10
 
 ### 🚀 Advanced CLI Features & Interactive Modes
 

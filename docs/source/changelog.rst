@@ -40,7 +40,7 @@ Fixed
 * **Cross-References**: Fixed all broken internal documentation links
 * **Missing Files**: Created required static directories and placeholder files
 
-[2.7.0] - 2025-01-10
+[2.7.1] - 2025-01-10
 ---------------------
 
 🚀 Advanced CLI Features & Interactive Modes
@@ -247,7 +247,7 @@ Future Roadmap
 
 Planned features for upcoming releases:
 
-**v2.7.0** (Planned)
+**v2.7.1** (Planned)
 ~~~~~~~~~~~~~~~~~~~~
 
 * **Local AI Models**: Support for Ollama and LocalAI
@@ -255,7 +255,7 @@ Planned features for upcoming releases:
 * **Plugin System**: Extensible plugin architecture
 * **Batch Processing**: Process multiple queries efficiently
 
-**v2.7.0** (Planned)
+**v2.7.1** (Planned)
 ~~~~~~~~~~~~~~~~~~~~
 
 * **Web Interface**: Optional web UI for DrGPT
